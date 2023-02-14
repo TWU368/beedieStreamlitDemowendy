@@ -14,7 +14,7 @@ begDate = df.index.min()
 endDate = df.index.max()
 
 pickStart = st.date_input("Pick start date:", begDate)
-pickEnd = st.date_input("Pick start date:", endDate)
+pickEnd = st.date_input("Pick end date:", endDate)
 
 st.write(df)
 st.write(begDate)
