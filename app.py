@@ -15,9 +15,18 @@ endDate = df.index.max()
 
 minDateDropdown = pd.to_datetime('2010-01-01')
 
-pickStart = st.date_input("Pick start date:", begDate,min_value='2010-01-01')
+pickStart = st.date_input("Pick start date:", begDate,min_value=minDateDropdown)
 pickEnd = st.date_input("Pick end date:", endDate)
 
-st.write(df.loc[pickStart:pickEnd])
+
+
+filterDF=(df.loc[pickStart:pickEnd])
+st.write(filterDF)
+
+import plotly.express as px
+fig = px.line(filterDF, x=filterDF.index, y="close")
+st.plotly_chart(fig)
+
+
 st.write(begDate)
 st.write(endDate)
