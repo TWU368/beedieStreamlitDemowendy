@@ -24,7 +24,7 @@ filterDF=(df.loc[pickStart:pickEnd])
 st.write(filterDF)
 
 import plotly.express as px
-fig = px.line(filterDF, x=filterDF.index, y="close")
+fig = px.line(filterDF, x=filterDF.index, y="Close")
 st.plotly_chart(fig)
 
 
